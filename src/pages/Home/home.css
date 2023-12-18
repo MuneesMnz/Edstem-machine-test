@@ -1,0 +1,30 @@
+
+.homeHeading{
+  font-size: 40px; 
+  margin-bottom: 40px;
+}
+.homeContent{
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.categorySelect{
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.categoryItem{
+  padding: 10px 20px;
+  background-color: white;
+  border: 2px solid rgb(165, 42, 42);
+  border-radius: 5px;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.isSelected{
+  background-color: rgb(165, 42, 42);
+  color: white;
+}

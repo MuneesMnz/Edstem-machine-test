@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useEffect, useState } from "react";
+import HomePage from "./pages/Home/Home";
+import QuizPage from "./pages/Quiz/Quiz";
+import ResultPage from "./pages/Result";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  //states
+  const [pages, setPages] = useState("Home");
+  const [category, setCategory] = useState("");
+  const [result, setResult] = useState(0);
+  console.log("tesult", result);
+
+  const pageslist = {
+    home: "Home",
+    qustions: "Qustions",
+    result: "Result",
+  };
+
+  // const Home = "Home";
+  // const Qustions = ;
+  // const Result = ;
+
+  switch (pages) {
+    case pageslist.home:
+      return (
+        <HomePage
+          setCategory={setCategory}
+          category={category}
+          setPages={setPages}
+        />
+      );
+
+    case pageslist.qustions:
+      return (
+        <QuizPage
+          category={category}
+          setPages={setPages}
+          setResult={setResult}
+        />
+      );
+
+    case pageslist.result:
+      return <ResultPage setPages={setPages} result={result} />;
+
+    default:
+      <div>Home</div>;
+  }
 }
 
 export default App;
